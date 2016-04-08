@@ -115,7 +115,7 @@ function getNextImage()
     //console.log(combos);    
     //comboId = Math.floor(Math.random()* combos.length);
     comboId = comboIdArray[currentComboIdIdx];
-    currentComboIdIdx = (currentComboIdIdx + 1) % 10;
+    currentComboIdIdx = (currentComboIdIdx + 1) % 5;
     $("#app_image").attr('src', combos[comboId].appURI);
     app.onload = getAppImageDimensions;
     $("#ad_image").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
@@ -252,7 +252,7 @@ function handleNextButton()
 	askQuestions();
     }
     console.log("current state: \n", pageState)
-    if (screenNo == 10) {
+    if (screenNo == 5) {
         //screenNo = 0;
 	
 	introDiv.innerHTML = "<h1>Thank you for your time. Have a nice day!</h1><br><p>Please close this browser window now.</p>";
