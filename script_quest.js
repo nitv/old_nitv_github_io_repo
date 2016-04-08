@@ -52,7 +52,7 @@ $.ajax({
        }
 	
        console.log(combos);    
-       generateComboIdArray();
+       comboIdArray = create_unique_random_array(10, 0, 9);
        //var comboId = Math.floor(Math.random()*$(json).length);
        //$("#app_image").attr('src', combos[comboId].appURI);
        //app.onload = getAppImageDimensions;
@@ -60,29 +60,30 @@ $.ajax({
     }
 )
 
-function generateComboIdArray()
-{
-    var numCombos = 0;
-    var found = false;
-    var randNum;
-    while (numCombos < 10){
-        found = false;
-        randNum =  Math.floor(Math.random()* combos.length);
+function create_unique_random_array(num_elements, min, max) {
 
-        //check if random number is already in the array
-        for (i = 0; i < comboIdArray.length; i++){
-            if (comboIdArray[i] == randNum){
-	        found = true;
-		break;
-	    }
-        }
+    var temp, nums = new Array;
 
-        if (found == false){
-            comboIdArray.push(randNum);
-	    found = false;
-	    numCombos = numCombos + 1;
-        }
+    for (var element=0; element<num_elements; element++) {
+
+        //IMPORTANT: DON'T FORGET THE SEMI-COLON AT THE END
+        while((temp=number_found(random_number(min,max),nums))==-1);
+        nums[element] = temp;
     }
+
+    return (nums);
+}
+
+function number_found (random_number, number_array) {
+
+    for (var element=0; element<number_array.length; element++) {
+
+        if (random_number==number_array[element]) {
+            return (-1);
+	}
+   }
+
+    return (random_number);
 }
 
 function getAppImageDimensions()
