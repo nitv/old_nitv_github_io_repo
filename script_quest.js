@@ -53,6 +53,7 @@ $.ajax({
 	
        console.log(combos);    
        comboIdArray = create_unique_random_array(5, 0, 4);
+       console.log(comboIdArray);
        //var comboId = Math.floor(Math.random()*$(json).length);
        //$("#app_image").attr('src', combos[comboId].appURI);
        //app.onload = getAppImageDimensions;
