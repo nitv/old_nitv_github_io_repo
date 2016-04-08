@@ -30,22 +30,7 @@
                 ]
             }
         ],
-        "answers": [
-            {
-                "respondentNo": 0,
-                "comboId": 0,
-                "answers": [
-                    {
-                        "quesId": 0,
-                        "answerId": 1
-                    },
-                    {
-                        "quesId": 1,
-                        "answerId": 1
-                    }
-                ]
-            }
-        ]
+        "answers": []
     },
     {
         "combo": "1",
@@ -111,22 +96,7 @@
                 ]
             }
         ],
-        "answers": [
-            {
-                "respondentNo": 0,
-                "comboId": 2,
-                "answers": [
-                    {
-                        "quesId": 0,
-                        "answerId": 0
-                    },
-                    {
-                        "quesId": 1,
-                        "answerId": 0
-                    }
-                ]
-            }
-        ]
+        "answers": []
     },
     {
         "combo": "3",

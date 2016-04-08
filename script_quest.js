@@ -25,6 +25,8 @@ var combos = [];
 var pageState = 0;
 var stateNames = ['intro', 'app+image', 'app-only', 'questionnaire'];
 var numStates = 4;
+var comboIdArray = [];
+var currentComboIdIdx;
 
 $.ajax({
     type: "GET",
@@ -50,12 +52,38 @@ $.ajax({
        }
 	
        console.log(combos);    
+       generateComboIdArray();
        //var comboId = Math.floor(Math.random()*$(json).length);
        //$("#app_image").attr('src', combos[comboId].appURI);
        //app.onload = getAppImageDimensions;
     }
     }
 )
+
+function generateComboIdArray()
+{
+    var numCombos = 0;
+    var found = false;
+    var randNum;
+    while (numCombos < 10){
+        found = false;
+        randNum =  Math.floor(Math.random()* combos.length);
+
+        //check if random number is already in the array
+        for (i = 0; i < comboIdArray.length; i++){
+            if (comboIdArray[i] == randNum){
+	        found = true;
+		break;
+	    }
+        }
+
+        if (found == false){
+            comboIdArray.push(randNum);
+	    found = false;
+	    numCombos = numCombos + 1;
+        }
+    }
+}
 
 function getAppImageDimensions()
 {
@@ -78,7 +106,9 @@ function getNextImage()
 {
     //app.src = imageList[Math.floor((Math.random()*imageList.length))];
     //console.log(combos);    
-    comboId = Math.floor(Math.random()* combos.length);
+    //comboId = Math.floor(Math.random()* combos.length);
+    comboId = comboIdArray[currentComboIdIdx];
+    currentComboIdIdx = (currentComboIdIdx + 1) % 10;
     $("#app_image").attr('src', combos[comboId].appURI);
     app.onload = getAppImageDimensions;
     $("#ad_image").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
@@ -218,7 +248,7 @@ function handleNextButton()
     if (screenNo == 10) {
         //screenNo = 0;
 	
-	introDiv.innerHTML = "<h1>Thank you for your time. Have a nice day!</h1>";
+	introDiv.innerHTML = "<h1>Thank you for your time. Have a nice day!</h1><br><p>Please close this browser window now.</p>";
 	introDiv.style.display = "block";
 	appDiv.style.display = "none";
 	ad.style.display = "none";
