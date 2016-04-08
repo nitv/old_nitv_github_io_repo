@@ -60,6 +60,11 @@ $.ajax({
     }
 )
 
+// RETURNS PSEUDO-RANDOM NUMBER IN RANGE min...max
+function random_number(min,max) {
+    return (Math.round((max-min) * Math.random() + min));
+}
+
 function create_unique_random_array(num_elements, min, max) {
 
     var temp, nums = new Array;
