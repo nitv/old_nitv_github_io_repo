@@ -28,6 +28,8 @@ var numStates = 4;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
 
+console.log = function(){}
+
 $.ajax({
     type: "GET",
     url: "combosquestions.txt",
