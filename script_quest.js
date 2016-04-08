@@ -26,7 +26,7 @@ var pageState = 0;
 var stateNames = ['intro', 'app+image', 'app-only', 'questionnaire'];
 var numStates = 4;
 var comboIdArray = [];
-var currentComboIdIdx;
+var currentComboIdIdx = 0;
 
 $.ajax({
     type: "GET",
