@@ -175,7 +175,7 @@ function recordAnswers(answers)
 {
     console.log(answers);
     //alert(answers.comboId);
-    $.get("response.php", {data: JSON.stringify(answers)}, function (results){
+    $.get("http://vermaverick.com/testapp/response.php", {data: JSON.stringify(answers)}, function (results){
 	    //alert(results)
 	    });
     screenNo += 1;
