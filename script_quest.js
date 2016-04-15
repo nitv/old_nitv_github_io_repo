@@ -25,7 +25,7 @@ var adArea;
 var combos = [];
 var pageState = -1;
 var stateNames = ['intro', 'app+image', 'app-only', 'questionnaire'];
-var numStates = 3;
+var numStates = 2;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
 
@@ -210,24 +210,31 @@ function validateForm()
         }
     }
 }
+function initialPage()
+{
+    introDiv.innerHTML = "<h1>Screen No. " + (screenNo + 1).toString() + "</h1><p>Please press 'Next'</p>";
+    introDiv.style.display = "block";
+    appDiv.style.display = "none";
+    ad.style.display = "none";
+    questDiv.style.display = "none";
+    nextButton.style.display = "block";
+}
 
 function handleNextButton()
 {
     pageState = (pageState + 1) % numStates;
 
     if (pageState == 0) {
-        introDiv.innerHTML = "<h1>Screen No. " + (screenNo + 1).toString() + "</h1><p>Please press 'Next'</p>";
-        introDiv.style.display = "block";
+        //introDiv.innerHTML = "<h1>Screen No. " + (screenNo + 1).toString() + "</h1><p>Please press 'Next'</p>";
+        introDiv.style.display = "none";
         appDiv.style.display = "none";
         ad.style.display = "none";
         questDiv.style.display = "none";
         nextButton.style.display = "block";
-    } else if (pageState == 1) {
         getNextImage();
-        introDiv.style.display = "none";
         appDiv.style.display = "block";
         ad.style.display = "block";
-    } else if (pageState == 2) {
+    } else if (pageState == 1) {
         ad.style.display = "none";
         appDiv.style.display = "none";
         questDiv.style.display = "block";
