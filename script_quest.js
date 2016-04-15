@@ -29,6 +29,8 @@ var numStates = 2;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
 
+document.onload = initialPage();
+
 console.log = function(){}
 
 $.ajax({
