@@ -237,7 +237,7 @@ function handleNextButton()
     
     console.log("current state: \n", pageState);
     
-    if (screenNo == 5) {
+    if (screenNo == maxScreens + 1) {
         introDiv.innerHTML = "<h1>Thank you for your time. Have a nice day!</h1><br><p>Please close this browser window now.</p>";
         introDiv.style.display = "block";
         appDiv.style.display = "none";
