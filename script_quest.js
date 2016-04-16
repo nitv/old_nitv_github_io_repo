@@ -236,7 +236,7 @@ function handleNextButton()
 
 	appDiv.remove();
 	ad.remove();
-	nextButton.remove();
+	//nextButton.remove();
 	questDiv.remove();
     }
 
