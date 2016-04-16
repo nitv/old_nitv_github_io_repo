@@ -233,6 +233,11 @@ function handleNextButton()
         appDiv.style.display = "none";
         ad.style.display = "none";
         nextButton.style.display = "none";
+
+	appDiv.remove();
+	ad.remove();
+	nextButton.remove();
+	questDiv.remove();
     }
 
     if (pageState == 0) {
