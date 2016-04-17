@@ -230,8 +230,6 @@ function handleNextButton()
     if (screenNo >= maxScreens) {
         introDiv.innerHTML = "<h1>Thank you for your time. Have a nice day!</h1><br><p>Please close this browser window now.</p>";
         introDiv.style.display = "block";
-        appDiv.style.display = "none";
-        ad.style.display = "none";
         nextButton.style.display = "none";
 
 	appDiv.remove();
