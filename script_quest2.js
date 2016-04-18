@@ -156,7 +156,7 @@ function handleFormData(e){
         return true;
     } else {
         recordAnswers(answerObj);
-        questDiv.removeChild(quesForm);
+        formContainer.removeChild(quesForm);
         handleNextButton();
         return false;
     }
