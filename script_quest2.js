@@ -12,6 +12,7 @@ var numStates = 3;
 var combos = [];
 var comboIdArray = [];
 var currentComboIdIdx = 0;
+var maxScreens = 2;
 
 $.ajax({
     type: "GET",
