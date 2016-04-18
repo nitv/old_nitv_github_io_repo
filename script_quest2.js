@@ -211,5 +211,14 @@ function handleNextButton()
         nextButton.style.display = "none";
         askQuestions();
         formContainer.style.display = "block";
+        state = (state + 1) % numStates;
+    } else if (state == 2) {
+        imgContainer.remove();
+        appImage.remove();
+        adContainer.remove();
+        adImage.remove();
+        introContainer.remove();
+        formContainer.remove();
+        alert("Thank You");
     }
 }
