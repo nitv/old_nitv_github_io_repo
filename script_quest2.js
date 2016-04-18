@@ -110,6 +110,7 @@ function askQuestions()
             console.log(combos[comboId].questions[i].choices[j]);
             //choiceLabel.appendChild(choice);
             quesForm.appendChild(choice);
+            quesForm.appendChild(choiceLabel);
         }
         //question.appendChild(answers);
     }
