@@ -77,7 +77,6 @@ function getNextImage()
     comboId = comboIdArray[currentComboIdIdx];
     currentComboIdIdx = (currentComboIdIdx + 1) % 5;
     $("#appImage").attr('src', combos[comboId].appURI);
-    //appImage.onload = getAppImageDimensions;
     $("#adImage").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
 }
 
@@ -125,7 +124,6 @@ function askQuestions()
     formContainer.appendChild(quesForm);
 }
 
-
 function init()
 {
     console.log("document loaded");
@@ -152,8 +150,8 @@ function handleNextButton()
         state = (state + 1) % numStates;
     } else if (state == 1) {
         imgContainer.style.display = "none";
+        nextButton.style.display = "none";
         askQuestions();
         formContainer.style.display = "block";
-        nextButton.style.display = "none";
     }
 }
