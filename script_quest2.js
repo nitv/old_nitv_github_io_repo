@@ -114,7 +114,7 @@ function askQuestions()
             quesForm.appendChild(document.createElement("br"));
         }
         //question.appendChild(answers);
-        if (i + 1 == combos[comboId].questions.length){
+        if (i + 1 != combos[comboId].questions.length){
             quesForm.appendChild(document.createElement("hr"));
         }
     }
