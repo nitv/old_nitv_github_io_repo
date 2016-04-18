@@ -76,17 +76,8 @@ function getNextImage()
 {
     comboId = comboIdArray[currentComboIdIdx];
     currentComboIdIdx = (currentComboIdIdx + 1) % 5;
-    $("#app_image").attr('src', combos[comboId].appURI);
-    app.onload = getAppImageDimensions;
-    $("#ad_image").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
-}
-
-function getNextImage()
-{
-    comboId = comboIdArray[currentComboIdIdx];
-    currentComboIdIdx = (currentComboIdIdx + 1) % 5;
     $("#appImage").attr('src', combos[comboId].appURI);
-    app.onload = getAppImageDimensions;
+    appImage.onload = getAppImageDimensions;
     $("#adImage").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
 }
 
