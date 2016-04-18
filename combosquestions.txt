@@ -3,40 +3,45 @@
     "combo": "0",
     "images": {"appURI": "apps/News/BBC2.jpg", "adURI": "banners/shopping4.jpg", "adpos": "top"},
     "questions": [
-                   {"id": 0, "ques": "Do you agree that the app represents 'refined' content?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
-                   {"id": 1, "ques": "Do you agree that the app's content is 'mature'?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
+                   {"id": 0, "ques": "Was there an ad in the screenshot that you saw?", "choices": ["Yes", "No"]},
+                   {"id": 1, "ques": "Do you agree that the app represents 'refined' content?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
+                   {"id": 2, "ques": "Do you agree that the app's content is 'mature'?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
                  ]
   },
   {
     "combo": "1",
     "images": {"appURI": "apps/Finance/boa2.jpg", "adURI": "banners/android1.jpg", "adpos": "bottom"},
     "questions": [
-                   {"id": 0, "ques": "Do you agree that the words 'audacious', and 'forward' characterize the app?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
-                   {"id": 1, "ques": "Do you agree that the app is 'enterprising' in its content design?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
+                   {"id": 0, "ques": "Was there an ad in the screenshot that you saw?", "choices": ["Yes", "No"]},
+                   {"id": 1, "ques": "Do you agree that the words 'audacious', and 'forward' characterize the app?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
+                   {"id": 2, "ques": "Do you agree that the app is 'enterprising' in its content design?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
                  ]
   },
   {
     "combo": "2",
     "images": {"appURI": "apps/Social/fb2.jpg", "adURI": "banners/books5.png", "adpos": "bottom"},
     "questions": [
-                   {"id": 0, "ques": "Do you think that the app has content that is fashionable or 'in vogue'?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
-                   {"id": 1, "ques": "Does the app require you to have specialized or professional knowledge to interact with it?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
+                   {"id": 0, "ques": "Was there an ad in the screenshot that you saw?", "choices": ["Yes", "No"]},
+                   {"id": 1, "ques": "Do you think that the app has content that is fashionable or 'in vogue'?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
+                   {"id": 2, "ques": "Does the app require you to have specialized or professional knowledge to interact with it?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
                  ]
   },
   {
     "combo": "3",
     "images": {"appURI": "apps/Medical/mychart3.jpg", "adURI": "banners/microsoft1.jpg", "adpos": "top"},
     "questions": [
-                   {"id": 0, "ques": "Do you think that the content of the app is descriptive or explanatory in nature?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
-                   {"id": 1, "ques": "Do you think that the app is captivating, or engrossing in nature?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
+                   {"id": 0, "ques": "Was there an ad in the screenshot that you saw?", "choices": ["Yes", "No"]},
+                   {"id": 1, "ques": "Do you think that the content of the app is descriptive or explanatory in nature?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
+                   {"id": 2, "ques": "Do you think that the app is captivating, or engrossing in nature?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
                  ]
   },
   {
     "combo": "4",
     "images": {"appURI": "apps/Social/fb2.jpg", "adURI": "banners/music2.jpg", "adpos": "top"},
     "questions": [
-                   {"id": 0, "ques": "Do you think the app targets teenagers or adolescents?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
-                   {"id": 1, "ques": "Is the content or feel of the app genuine, and/or authentic?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
+                   {"id": 0, "ques": "Was there an ad in the screenshot that you saw?", "choices": ["Yes", "No"]},
+                   {"id": 1, "ques": "Do you think the app targets teenagers or adolescents?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]},
+                   {"id": 2, "ques": "Is the content or feel of the app genuine, and/or authentic?", "choices": ["Completely agree", "Somewhat agree", "Not sure", "Somewhat Disagree", "Completely disagree"]}
                  ]
   }
 ]
