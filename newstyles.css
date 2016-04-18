@@ -152,3 +152,9 @@ input[type=radio] {
     width: 2%;
     height: 2em;
 }
+
+label {
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid #D1D3D4
+}
