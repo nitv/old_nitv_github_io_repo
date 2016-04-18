@@ -219,7 +219,8 @@ function handleNextButton()
         state = (state + 1) % numStates;
     } else if (state == 1) {
         imgContainer.style.display = "none";
-        nextButton.style.display = "none";
+        //nextButton.style.display = "none";
+        controlContainer.style.display = "none";
         askQuestions();
         formContainer.style.display = "block";
         state = (state + 1) % numStates;

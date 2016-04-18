@@ -138,15 +138,16 @@ p {
 }
 
 .submitBtn {
-    height: 85%;
+/*    height: 85%;
     width: 92%;
     position: absolute;
     top: 7.5%;
     bottom: 7.5%;
     left: 4%;
-    right: 4%;
+    right: 4%;*/
     border-radius: 10px;
     font-size: 4em;
+    margin-left: 5.5em;
 }
 
 input[type=radio] {
