@@ -111,6 +111,7 @@ function askQuestions()
             //choiceLabel.appendChild(choice);
             quesForm.appendChild(choice);
             quesForm.appendChild(choiceLabel);
+            quesForm.appendChild(document.createElement("br"));
         }
         //question.appendChild(answers);
     }
