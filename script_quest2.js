@@ -77,7 +77,7 @@ function getNextImage()
     comboId = comboIdArray[currentComboIdIdx];
     currentComboIdIdx = (currentComboIdIdx + 1) % 5;
     $("#appImage").attr('src', combos[comboId].appURI);
-    appImage.onload = getAppImageDimensions;
+    //appImage.onload = getAppImageDimensions;
     $("#adImage").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
 }
 
