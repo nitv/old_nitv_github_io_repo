@@ -105,7 +105,8 @@ function askQuestions()
             var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
             choiceLabel.appendChild(choiceText);
             choiceLabel.setAttribute("class", "choiceLabels");
-            choiceLabel.setAttribute("for", choice.getAttribute("id"))
+            choiceLabel.setAttribute("for", choice.getAttribute("id"));
+            choiceLabel.textContent = "Option";
             console.log(combos[comboId].questions[i].choices[j]);
             //choiceLabel.appendChild(choice);
             quesForm.appendChild(choice);
