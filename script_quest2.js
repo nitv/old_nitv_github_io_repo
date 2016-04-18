@@ -213,12 +213,15 @@ function handleNextButton()
         formContainer.style.display = "block";
         state = (state + 1) % numStates;
     } else if (state == 2) {
+        mainContainer.remove();
+        /*
         imgContainer.remove();
         appImage.remove();
         adContainer.remove();
         adImage.remove();
         introContainer.remove();
         formContainer.remove();
+        */
         alert("Thank You");
     }
 }
