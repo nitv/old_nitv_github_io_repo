@@ -170,4 +170,5 @@ label {
 input[type="radio"]:checked + label {
     background-color: #A1A72E;
     border-radius: 10px;
+    border-style: none;
 }
