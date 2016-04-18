@@ -157,7 +157,7 @@ function handleNextButton()
         imgContainer.style.display = "block";
         adContainer.classList.add("adTop");
         //adContainer.style.display = "block";
-        
+        getNextImage();
         state = (state + 1) % numStates;
     } else if (state == 1) {
         imgContainer.style.display = "none";
