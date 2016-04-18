@@ -14,7 +14,7 @@ body {
     height: 90%;
     width: 100%;
     position: absolute;
-    top: 0px;
+    top: 4px;
     border: 2px solid white;
     display: none;
 }
