@@ -160,6 +160,8 @@ label {
     display: inline-block;
     /* background-color: #ddd; */
     /*padding: 4px 11px;*/
+    padding-left: 1%;
+    padding-right: 1%;
     font-family: Arial;
     font-size: 16px;
     border-bottom: 3px dotted white;
@@ -167,4 +169,5 @@ label {
 
 input[type="radio"]:checked + label {
     background-color: #A1A72E;
+    border-radius: 10px;
 }
