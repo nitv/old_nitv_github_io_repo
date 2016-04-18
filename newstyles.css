@@ -1,5 +1,6 @@
 body {
     background-color: #517397;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mainContainer {
@@ -145,8 +146,9 @@ p {
     bottom: 7.5%;
     left: 4%;
     right: 4%;*/
+    width: 30%;
     border-radius: 10px;
-    font-size: 4em;
+    font-size: 2.5em;
     margin-left: 2%;
 }
 
