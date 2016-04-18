@@ -124,6 +124,53 @@ function askQuestions()
     formContainer.appendChild(quesForm);
 }
 
+function handleFormData(e){
+    var questCounter = 0;
+    var numQuestions = combos[comboId].questions.length;
+    var answerArray = [];
+
+    //answerArray.push({"comboId": comboId});
+    if (e.preventDefault) e.preventDefault();
+    
+    var answerObj = {};
+    answerObj.comboId = comboId;
+    console.log("handling form data");
+    for (i=0; i<quesForm.elements.length; i++){
+        if(quesForm.elements[i].checked == true){
+            console.log("Question: ", combos[comboId].questions[questCounter].ques);
+    //        quesAnsPair.quesId = questCounter;
+            console.log("your answer: ", quesForm.elements[i].value);
+    //        quesAnsPair.answerId = combos[comboId].questions[questCounter].choices.indexOf(quesForm.elements[i].value);
+            var quesAnsPair = {quesId: questCounter, answerId:      combos[comboId].questions[questCounter].choices.indexOf(quesForm.elements[i].value)};
+            console.log(quesAnsPair);
+            questCounter += 1;
+            answerArray.push(quesAnsPair);
+        }
+    }
+    answerObj.answers = answerArray;
+    console.log(answerObj); 
+    console.log("questCounter, numQuestions =", questCounter, numQuestions);
+    if (questCounter < numQuestions) {
+        alert("Please answer all questions");
+        return true;
+    } else {
+        recordAnswers(answerObj);
+        questDiv.removeChild(quesForm);
+        handleNextButton();
+        return false;
+    }
+}
+
+function validateForm()
+{
+    for (i=0; i < quesForm.elements[i].length; i++){
+        if (quesForm.elements[i].value == null || quesForm.elements[i].value == ""){
+            alert("Please answer all the questions");
+            return false;
+        }
+    }
+}
+
 function init()
 {
     console.log("document loaded");
