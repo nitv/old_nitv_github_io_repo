@@ -85,6 +85,7 @@ function askQuestions()
 {
     var question;
     quesForm = document.createElement("form");
+    quesForm.setAttribute("id", "quesForm");
     for (i=0; i < combos[comboId].questions.length; i++){
         question = document.createElement("p");
         question.setAttribute("id", combos[comboId].questions[i].id);
@@ -113,6 +114,7 @@ function askQuestions()
     submitBtn.type = "submit";
     submitBtn.value = "Submit";
     submitBtn.className = "submitBtn";
+    submitBtn.setAttribute("form", "quesForm");
     quesForm.appendChild(document.createElement("p"));
     controlContainer.appendChild(submitBtn);
 
