@@ -5,7 +5,7 @@ body {
 }
 
 .mainContainer {
-    height: 95%;
+    height: 97%;
     width: 95%;
     margin: 2.5% auto;
     /*border: 2px solid white;*/
@@ -81,7 +81,7 @@ body {
 }
 
 #nextButton {
-    height: 85%;
+    height: 95%;
     width: 92%;
     position: absolute;
     top: 7.5%;
@@ -105,7 +105,7 @@ body {
 }
 
 .formContainer {
-    height: 90%;
+    height: 97%;
     width: 100%;
     position: absolute;
     top: 0px;
