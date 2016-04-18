@@ -146,15 +146,20 @@ p {
     border-radius: 10px;
     font-size: 4em;
 }
-
+/*
 input[type=radio] {
     border: 0px;
     width: 2%;
     height: 2em;
 }
-
+*/
 label {
     width: 200px;
     border-radius: 3px;
     border: 1px solid #D1D3D4
+}
+
+/* hide input */
+input.radio:empty {
+	margin-left: -999px;
 }
