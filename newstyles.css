@@ -103,6 +103,7 @@ body {
     top: 0px;
     border: 2px solid white;
     display: none;
+    overflow-y: auto;
 }
 
 h1 {
