@@ -34,6 +34,7 @@ $.ajax({
                 question.ques = $(json)[i].questions[j].ques;
                 question.choices = $(json)[i].questions[j].choices;
                 combo.questions.push(question);
+                console.log(combo.questions);
             }
             combos.push(combo);
         }
