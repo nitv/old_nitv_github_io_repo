@@ -10,6 +10,7 @@ var formContainer;
 var state = 0;
 var numStates = 3;
 var combos = [];
+var comboId;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
 var maxScreens = 2;
