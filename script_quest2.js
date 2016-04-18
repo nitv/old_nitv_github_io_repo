@@ -102,11 +102,11 @@ function askQuestions()
             choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
             choice.setAttribute("id", "choice"+i.toString()+j.toString())
             var choiceLabel = document.createElement("label");
-            var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
-            choiceLabel.appendChild(choiceText);
+            //var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
+            //choiceLabel.appendChild(choiceText);
             choiceLabel.setAttribute("class", "choiceLabels");
             choiceLabel.setAttribute("for", choice.getAttribute("id"));
-            choiceLabel.textContent = "Option";
+            choiceLabel.textContent = document.createTextNode(combos[comboId].questions[i].choices[j]);
             console.log(combos[comboId].questions[i].choices[j]);
             //choiceLabel.appendChild(choice);
             quesForm.appendChild(choice);
