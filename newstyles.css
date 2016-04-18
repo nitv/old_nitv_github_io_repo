@@ -3,9 +3,9 @@ body {
 }
 
 .mainContainer {
-    height: 90%;
-    width: 90%;
-    margin: 5% auto;
+    height: 95%;
+    width: 95%;
+    margin: 2.5% auto;
     border: 2px solid white;
     position: relative;
 }
