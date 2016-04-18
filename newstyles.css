@@ -145,3 +145,7 @@ p {
     border-radius: 10px;
     font-size: 4em;
 }
+
+input[type=radio] {
+    width: 3em;
+}
