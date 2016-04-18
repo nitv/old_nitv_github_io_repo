@@ -124,7 +124,8 @@ function askQuestions()
     submitBtn.className = "submitBtn";
     submitBtn.setAttribute("form", "quesForm");
     quesForm.appendChild(document.createElement("p"));
-    controlContainer.appendChild(submitBtn);
+    //controlContainer.appendChild(submitBtn);
+    quesForm.appendChild(submitBtn);
 
     if (quesForm.attachEvent){
         quesForm.attachEvent("submit", handleFormData);
