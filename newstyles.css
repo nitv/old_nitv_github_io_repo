@@ -158,8 +158,6 @@ body {
 	font-family: sans-serif;
 	font-weight: normal;
 	margin: 10px;
-	color: #999;
-	background-color: #eee;
 }
 
 form {
@@ -168,7 +166,7 @@ form {
 
 div {
 	clear: both;
-	margin: 0 50px;
+	/*margin: 0 50px;*/
 }
 
 label {
