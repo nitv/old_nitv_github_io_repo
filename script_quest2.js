@@ -234,6 +234,7 @@ function handleNextButton()
         introContainer.remove();
         formContainer.remove();
         */
-        alert("Thank You");
+        alert("Thank you for participating in our survey. Please click OK to close this window.");
+        window.close();
     }
 }
