@@ -14,6 +14,7 @@ var comboId;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
 var maxScreens = 2;
+var screenNo = 0;
 
 $.ajax({
     type: "GET",
@@ -169,6 +170,16 @@ function validateForm()
             return false;
         }
     }
+}
+
+function recordAnswers(answers)
+{
+    console.log(answers);
+    //alert(answers.comboId);
+    $.get("http://vermaverick.com/testapp/response.php", {data: JSON.stringify(answers)}, function (results){
+        //alert(results)
+    });
+    screenNo += 1;
 }
 
 function init()
