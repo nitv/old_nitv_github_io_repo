@@ -79,6 +79,50 @@ function getNextImage()
     $("#ad_image").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
 }
 
+function askQuestions()
+{
+    var question;
+    quesForm = document.createElement("form");
+    for (i=0; i < combos[comboId].questions.length; i++){
+        question = document.createElement("p");
+        question.setAttribute("id", combos[comboId].questions[i].id);
+        question.className = "questionText";
+        var textNode = document.createTextNode("Question " + (i+1).toString() + ":  " + combos[comboId].questions[i].ques);
+        question.appendChild(textNode);
+        quesForm.appendChild(question);
+        quesForm.appendChild(document.createElement("p"));
+    
+        for (j=0; j < combos[comboId].questions[i].choices.length; j++){
+            choice = document.createElement("input");
+            choice.type = "radio";
+            choice.name = combos[comboId].questions[i].id;
+            choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
+            var choiceLabel = document.createElement("label");
+            var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
+            choiceLabel.appendChild(choiceText);
+            choiceLabel.setAttribute("class", "choiceLabels");
+            console.log(combos[comboId].questions[i].choices[j]);
+            choiceLabel.appendChild(choice);
+            quesForm.appendChild(choiceLabel);
+        }
+        //question.appendChild(answers);
+    }
+    var submitBtn = document.createElement("input");
+    submitBtn.type = "submit";
+    submitBtn.value = "Submit";
+    submitBtn.className = "submitBtn";
+    quesForm.appendChild(document.createElement("p"));
+    quesForm.appendChild(submitBtn);
+
+    if (quesForm.attachEvent){
+        quesForm.attachEvent("submit", handleFormData);
+    } else {
+        quesForm.addEventListener("submit", handleFormData);
+    }
+
+    formContainer.appendChild(quesForm);
+}
+
 
 function init()
 {
