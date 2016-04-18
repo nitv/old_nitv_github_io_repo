@@ -100,7 +100,7 @@ function askQuestions()
             choice.type = "radio";
             choice.name = combos[comboId].questions[i].id;
             choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
-            choice.setAttribute("id", "choice"+j.toString())
+            choice.setAttribute("id", "choice"+i.toString()+j.toString())
             var choiceLabel = document.createElement("label");
             var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
             choiceLabel.appendChild(choiceText);
@@ -108,7 +108,7 @@ function askQuestions()
             choiceLabel.setAttribute("for", choice.getAttribute("id"))
             console.log(combos[comboId].questions[i].choices[j]);
             //choiceLabel.appendChild(choice);
-            quesForm.appendChild(choiceLabel);
+            quesForm.appendChild(choice);
         }
         //question.appendChild(answers);
     }
