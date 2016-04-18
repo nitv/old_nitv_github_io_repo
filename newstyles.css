@@ -12,7 +12,7 @@ body {
 
 .imgContainer {
     height: 90%;
-    width: 100%;
+    /*width: 100%;*/
     position: absolute;
     top: 4px;
     border: 2px solid white;
@@ -62,7 +62,7 @@ body {
 
 #appImage {
     height: 100%;
-    width: 92%;
+    /*width: 92%;*/
     position: absolute;
     top: 0px;
     left: 4%;
