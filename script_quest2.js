@@ -97,36 +97,6 @@ function toggleQuestions()
             }
         }
     }
-    /*
-    if (document.getElementById("choice00").checked) {
-        for (var elem in elems) {
-            console.log(elem);
-            if (elems[elem].tagName != "input" && elems[elem].type != "radio"){
-                elems[elem].style.display = "block";
-            }
-        }
-    } else {
-        for (var elem in elems) {
-            console.log(elem);
-            if (elems[elem].getAttribute("id").slice(6, 7) != "0"){ //WARNING: hard-coding!
-                console.log("here baby!");
-                elems[elem].style.display = "none";
-            }
-        }
-    }
-    */
-    /*
-    if (document.getElementById("choice00").checked) {
-        //make visible all other questions and answers
-        for (i=1; i < combos[comboId].questions.length; i++) {
-            document.getElementById(combos[comboId].questions[i].id).style.display = "block";
-            for (j=0; j < combos[comboId].questions[i].choices.length; j++){
-                document.getElementById("choice"+i.toString()+j.toString()).style.display = "block";
-                for (var lbl in )
-            }
-        }
-    }
-    */
 }
 
 function askQuestions()
@@ -185,9 +155,10 @@ function askQuestions()
                 //    hr.style.display = "block";
                 //}
             //}
+            choiceLabel.appendChild(document.createElement("br"));
             questDiv.appendChild(choice);
             questDiv.appendChild(choiceLabel);
-            quesForm.appendChild(document.createElement("br"));
+            //quesForm.appendChild(document.createElement("br"));
         }
         //question.appendChild(answers);
         if (i + 1 != combos[comboId].questions.length){
