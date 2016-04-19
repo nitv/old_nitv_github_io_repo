@@ -82,7 +82,7 @@ function getNextImage()
 }
 
 function toggleQuestions()
-{
+{/*
     if (document.getElementById("choice00").checked) {
         for (var elem in document.getElementById("quesForm").children) {
             elem.style.display = "block";
@@ -94,6 +94,7 @@ function toggleQuestions()
             }
         }
     }
+    */
     /*
     if (document.getElementById("choice00").checked) {
         //make visible all other questions and answers
@@ -122,11 +123,11 @@ function askQuestions()
         quesForm.appendChild(question);
         quesForm.appendChild(document.createElement("p"));
     
-        if (i != 0) {
+        //if (i != 0) {
             /*Hide all other questions other than the first.
               Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-            question.style.display = "block";
-        }
+          //  question.style.display = "block";
+        //}
     
         for (j=0; j < combos[comboId].questions[i].choices.length; j++){
             choice = document.createElement("input");
@@ -149,8 +150,8 @@ function askQuestions()
             if (i != 0) {
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
-                choice.style.display = "block";
-                choiceLabel.style.display = "block";
+                //choice.style.display = "block";
+                //choiceLabel.style.display = "block";
             }
             quesForm.appendChild(choice);
             quesForm.appendChild(choiceLabel);
