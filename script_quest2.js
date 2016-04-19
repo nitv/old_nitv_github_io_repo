@@ -123,11 +123,11 @@ function askQuestions()
         quesForm.appendChild(question);
         quesForm.appendChild(document.createElement("p"));
     
-        //if (i != 0) {
+        if (i != 0) {
             /*Hide all other questions other than the first.
               Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-          //  question.style.display = "block";
-        //}
+            question.style.display = "none";
+        }
     
         for (j=0; j < combos[comboId].questions[i].choices.length; j++){
             choice = document.createElement("input");
