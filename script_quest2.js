@@ -85,6 +85,7 @@ function toggleQuestions()
 {
     console.log("toggleQuestions");
     var elems = document.getElementById("quesForm").children;
+    console.log(elems, elems.length);
     
     if (document.getElementById("choice00").checked) {
         for (var elem in elems) {
