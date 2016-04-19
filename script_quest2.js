@@ -132,7 +132,7 @@ function askQuestions()
             choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
             choice.setAttribute("id", "choice"+i.toString()+j.toString());
             if (i == 0) { //attach an event handler to just the first question's answer options
-                choice.onchange = toggleQuestions();
+                choice.onchange = toggleQuestions;
             }
             
             var choiceLabel = document.createElement("label");
