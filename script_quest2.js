@@ -82,7 +82,7 @@ function getNextImage()
 }
 
 function toggleQuestions()
-{/*
+{
     if (document.getElementById("choice00").checked) {
         for (var elem in document.getElementById("quesForm").children) {
             elem.style.display = "block";
@@ -94,7 +94,7 @@ function toggleQuestions()
             }
         }
     }
-    */
+    
     /*
     if (document.getElementById("choice00").checked) {
         //make visible all other questions and answers
@@ -129,9 +129,9 @@ function askQuestions()
             choice.name = combos[comboId].questions[i].id;
             choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
             choice.setAttribute("id", "choice"+i.toString()+j.toString());
-            //if (i == 0) { //attach an event handler to just the first question's answer options
-            //    choice.onchange = toggleQuestions();
-            //}
+            if (i == 0) { //attach an event handler to just the first question's answer options
+                choice.onchange = toggleQuestions();
+            }
             
             var choiceLabel = document.createElement("label");
             //var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
@@ -161,7 +161,7 @@ function askQuestions()
         }
         //question.appendChild(answers);
         if (i + 1 != combos[comboId].questions.length){
-            quesForm.appendChild(document.createElement("hr"));
+            //quesForm.appendChild(document.createElement("hr"));
         }
     }
     var submitBtn = document.createElement("input");
