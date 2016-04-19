@@ -88,7 +88,7 @@ function toggleQuestions()
     console.log(elems, elems.length);
     
     if (document.getElementById("choice00").checked) {
-        for (var elem in elems) {
+        for (var elem=0; elem < elems.length; elem++) {
             console.log(elem, elems[elem]);
             elems[elem].style.display = "block";
         }
