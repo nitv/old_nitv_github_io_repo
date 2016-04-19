@@ -187,13 +187,22 @@ function handleFormData(e){
     var questCounter = 0;
     var numQuestions = combos[comboId].questions.length;
     var answerArray = [];
-
+    var divs = quesForm.children;
     //answerArray.push({"comboId": comboId});
     if (e.preventDefault) e.preventDefault();
     
     var answerObj = {};
     answerObj.comboId = comboId;
     console.log("handling form data");
+    
+    if (divs[0].children[1].checked) {
+        console.log("YAY!!!");
+    }
+     
+    for (var elem in divs) {
+        //divs[elem]
+    }
+    /*
     for (i=0; i<quesForm.elements.length; i++){
         if(quesForm.elements[i].checked == true){
             console.log("Question: ", combos[comboId].questions[questCounter].ques);
@@ -218,6 +227,7 @@ function handleFormData(e){
         handleNextButton();
         return false;
     }
+    */
 }
 
 function validateForm()
