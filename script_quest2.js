@@ -197,7 +197,7 @@ function handleFormData(e){
     answerObj.comboId = comboId;
     console.log("handling form data");
     
-    if (divs[0].children[2].checked) { //i.e. "No" is selected
+    if (divs[0].children[4].checked) { //i.e. "No" is selected
         console.log("YAY!!!");
         var quesAnsPair = {quesId: 0, 
                            answerId: combos[comboId].questions[0].choices.indexOf(divs[0].childNodes[1].value)};
@@ -220,11 +220,13 @@ function handleFormData(e){
             var quesAnsPair = {quesId: questCounter,
                                answerId: combos[comboId].questions[questCounter].choices.indexOf(divs[i].value)};
             answerArray.push(quesAnsPair);
+            console.log("questCounter:", questCounter);
             questCounter += 1;
         }
     }
     
     answerObj.answers = answerArray;
+    console.log(answerObj);
     if (questCounter < numQuestions) {
         alert("Please answer all questions");
         return true;
