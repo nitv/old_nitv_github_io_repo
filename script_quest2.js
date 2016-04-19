@@ -87,14 +87,14 @@ function toggleQuestions()
     if (document.getElementById("choice00").checked) {
         for (var elem in document.getElementById("quesForm").children) {
             console.log(elem);
-            elem.style.display = "block";
+            document.getElementById("quesForm").children[elem].style.display = "block";
         }
     } else {
         for (var elem in document.getElementById("quesForm").children) {
             console.log(elem);
             if (elem.getAttribute("id").slice(6, 7) != "0"){ //WARNING: hard-coding!
                 console.log("here baby!");
-                elem.style.display = "none";
+                document.getElementById("quesForm").children[elem].style.display = "none";
             }
         }
     }
