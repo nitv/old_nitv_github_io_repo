@@ -85,6 +85,19 @@ function toggleQuestions()
 {
     console.log("toggleQuestions");
     var elems = document.getElementById("quesForm").children;
+    
+    if (document.getElementById("choice00").checked) {
+        for (var elem in elems) {
+            elems[elem].style.display = "block";
+        }
+    } else {
+        for (var elem in elems) {
+            if (elems[elem].getAttribute("id") != "ques0") {
+                elems[elem].style.display = "none";
+            }
+        }
+    }
+    /*
     if (document.getElementById("choice00").checked) {
         for (var elem in elems) {
             console.log(elem);
@@ -101,7 +114,7 @@ function toggleQuestions()
             }
         }
     }
-    
+    */
     /*
     if (document.getElementById("choice00").checked) {
         //make visible all other questions and answers
@@ -127,9 +140,19 @@ function askQuestions()
         question.className = "questionText";
         var textNode = document.createTextNode("Question " + (i+1).toString() + ":  " + combos[comboId].questions[i].ques);
         question.appendChild(textNode);
-        quesForm.appendChild(question);
+        var questDiv = document.createElement("div");
+        questDiv.setAttribute("id", "ques" + combos[comboId].questions[i].id.toString());
+        
+        if (i == 0) {
+            questDiv.style.display = "block";
+        } else {
+            questDiv.style.display = "none";
+        }
+        
+        questDiv.appendChild(question);
+        quesForm.appendChild(questDiv);
         quesForm.appendChild(document.createElement("p"));
-    
+        
         for (j=0; j < combos[comboId].questions[i].choices.length; j++){
             choice = document.createElement("input");
             choice.type = "radio";
@@ -148,22 +171,22 @@ function askQuestions()
             choiceLabel.textContent = combos[comboId].questions[i].choices[j];
             //console.log(combos[comboId].questions[i].choices[j]);
             //choiceLabel.appendChild(choice);
-            if (i > 0) {
+            //if (i > 0) {
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
-                choice.style.display = "none";
-                choiceLabel.style.display = "none";
+            //    choice.style.display = "none";
+            //    choiceLabel.style.display = "none";
                 
                 /*Hide all other questions other than the first.
                   Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-                question.style.display = "none";
+            //    question.style.display = "none";
                 
                 //for (var hr in document.getElementsByTagName("hr")) {
                 //    hr.style.display = "block";
                 //}
-            }
-            quesForm.appendChild(choice);
-            quesForm.appendChild(choiceLabel);
+            //}
+            questDiv.appendChild(choice);
+            questDiv.appendChild(choiceLabel);
             quesForm.appendChild(document.createElement("br"));
         }
         //question.appendChild(answers);
