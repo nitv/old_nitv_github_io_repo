@@ -93,7 +93,7 @@ function toggleQuestions()
             elems[elem].style.display = "block";
         }
     } else {
-        for (var elem in elems) {
+        for (var elem=0; elem < elems.length; elem++) {
             if (elems[elem].getAttribute("id") != "ques0" && elems[elem].type != "submit") {
                 elems[elem].style.display = "none";
             }
