@@ -90,9 +90,7 @@ function toggleQuestions()
     if (document.getElementById("choice00").checked) {
         for (var elem in elems) {
             console.log(elem, elems[elem]);
-            if (elems[elem].tagName == "div") {
-                elems[elem].style.display = "block";
-            }
+            elems[elem].style.display = "block";
         }
     } else {
         for (var elem in elems) {
