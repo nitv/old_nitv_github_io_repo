@@ -216,12 +216,14 @@ function handleFormData(e){
     }
     
     for (var i=0; i<numQuestions; i++) {
-        if (divs[i].type == "radio") {
-            var quesAnsPair = {quesId: questCounter,
-                               answerId: combos[comboId].questions[questCounter].choices.indexOf(divs[i].value)};
-            answerArray.push(quesAnsPair);
-            console.log("questCounter:", questCounter);
-            questCounter += 1;
+        for (var j=0; j<divs[i].childNodes.length; j++){
+            if (divs[i].childNodes[j].type == "radio") {
+                var quesAnsPair = {quesId: questCounter,
+                                    answerId: combos[comboId].questions[questCounter].choices.indexOf(divs[i].childNodes[j].value)};
+                answerArray.push(quesAnsPair);
+                console.log("questCounter:", questCounter);
+                questCounter += 1;
+            }
         }
     }
     
