@@ -281,7 +281,7 @@ function recordAnswers(answers)
 {
     console.log(answers);
     //alert(answers.comboId);
-    $.get("http://vermaverick.com/testapp/response.php", {data: JSON.stringify(answers)}, function (results){
+    $.get("response.php", {data: JSON.stringify(answers)}, function (results){
         //alert(results)
     });
     screenNo += 1;
