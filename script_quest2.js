@@ -89,6 +89,7 @@ function toggleQuestions()
     
     if (document.getElementById("choice00").checked) {
         for (var elem in elems) {
+            console.log(elem, elems[elem]);
             elems[elem].style.display = "block";
         }
     } else {
@@ -122,7 +123,7 @@ function askQuestions()
         
         questDiv.appendChild(question);
         quesForm.appendChild(questDiv);
-        quesForm.appendChild(document.createElement("p"));
+        //quesForm.appendChild(document.createElement("p"));
         
         for (j=0; j < combos[comboId].questions[i].choices.length; j++){
             choice = document.createElement("input");
