@@ -217,7 +217,7 @@ function handleFormData(e){
     
     for (var i=0; i<numQuestions; i++) {
         for (var j=0; j<divs[i].childNodes.length; j++){
-            if (divs[i].childNodes[j].type == "radio") {
+            if (divs[i].childNodes[j].type == "radio" && divs[i].childNodes[j].checked == true) {
                 var quesAnsPair = {quesId: questCounter,
                                     answerId: combos[comboId].questions[i].choices.indexOf(divs[i].childNodes[j].value)};
                 answerArray.push(quesAnsPair);
