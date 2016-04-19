@@ -92,7 +92,7 @@ function toggleQuestions()
         }
     } else {
         for (var elem in elems) {
-            if (elems[elem].getAttribute("id") != "ques0") {
+            if (elems[elem].getAttribute("id") != "ques0" && elems[elem].type != "submit") {
                 elems[elem].style.display = "none";
             }
         }
