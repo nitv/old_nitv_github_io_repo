@@ -144,15 +144,15 @@ function askQuestions()
             if (i > 0) {
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
-                choice.style.display = "none";
-                choiceLabel.style.display = "none";
+                choice.style.display = "block";
+                choiceLabel.style.display = "block";
                 
                 /*Hide all other questions other than the first.
                   Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-                question.style.display = "none";
+                question.style.display = "block";
                 
                 for (var hr in document.getElementsByTagName("hr")) {
-                    hr.style.display = "none";
+                    hr.style.display = "block";
                 }
             }
             quesForm.appendChild(choice);
