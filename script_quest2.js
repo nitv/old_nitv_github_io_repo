@@ -88,7 +88,7 @@ function toggleQuestions()
     if (document.getElementById("choice00").checked) {
         for (var elem in elems) {
             console.log(elem);
-            if (elems[elem].tagName != "input"){
+            if (elems[elem].tagName != "input" && elems[elem].type != "radio"){
                 elems[elem].style.display = "block";
             }
         }
