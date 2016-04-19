@@ -129,9 +129,9 @@ function askQuestions()
             choice.name = combos[comboId].questions[i].id;
             choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
             choice.setAttribute("id", "choice"+i.toString()+j.toString());
-            if (i == 0) { //attach an event handler to just the first question's answer options
-                choice.onchange = toggleQuestions();
-            }
+            //if (i == 0) { //attach an event handler to just the first question's answer options
+            //    choice.onchange = toggleQuestions();
+            //}
             
             var choiceLabel = document.createElement("label");
             //var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
@@ -141,7 +141,7 @@ function askQuestions()
             choiceLabel.textContent = combos[comboId].questions[i].choices[j];
             //console.log(combos[comboId].questions[i].choices[j]);
             //choiceLabel.appendChild(choice);
-            if (i != 0) {
+            if (i > 0) {
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
                 choice.style.display = "none";
