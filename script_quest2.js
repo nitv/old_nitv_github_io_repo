@@ -197,7 +197,7 @@ function handleFormData(e){
     answerObj.comboId = comboId;
     console.log("handling form data");
     
-    if (divs[0].children[1].checked) {
+    if (divs[0].children[2].checked) { //i.e. "No" is selected
         console.log("YAY!!!");
         var quesAnsPair = {quesId: 0, 
                            answerId: combos[comboId].questions[0].choices.indexOf(divs[0].childNodes[1].value)};
@@ -213,15 +213,28 @@ function handleFormData(e){
         formContainer.removeChild(quesForm);
         handleNextButton();
         return false;
+    }
+    
+    for (var i=0; i<numQuestions; i++) {
+        if (divs[i].type == "radio") {
+            var quesAnsPair = {quesId: questCounter,
+                               answerId: combos[comboId].questions[questCounter].choices.indexOf(divs[i].value)};
+            answerArray.push(quesAnsPair);
+            questCounter += 1;
+        }
+    }
+    
+    answerObj.answers = answerArray;
+    if (questCounter < numQuestions) {
+        alert("Please answer all questions");
+        return true;
     } else {
-        
+        recordAnswers(answerObj);
+        formContainer.removeChild(quesForm);
+        handleNextButton();
+        return false;
     }
     
-    
-    
-    for (var elem in divs) {
-        //divs[elem]
-    }
     /*
     for (i=0; i<quesForm.elements.length; i++){
         if(quesForm.elements[i].checked == true){
