@@ -123,12 +123,6 @@ function askQuestions()
         quesForm.appendChild(question);
         quesForm.appendChild(document.createElement("p"));
     
-        if (i != 0) {
-            /*Hide all other questions other than the first.
-              Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-            question.style.display = "none";
-        }
-    
         for (j=0; j < combos[comboId].questions[i].choices.length; j++){
             choice = document.createElement("input");
             choice.type = "radio";
@@ -150,8 +144,16 @@ function askQuestions()
             if (i != 0) {
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
-                //choice.style.display = "block";
-                //choiceLabel.style.display = "block";
+                choice.style.display = "none";
+                choiceLabel.style.display = "none";
+                
+                /*Hide all other questions other than the first.
+                  Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
+                question.style.display = "none";
+                
+                for (var hr in document.getElementsByTagName("hr")) {
+                    hr.style.display = "none";
+                }
             }
             quesForm.appendChild(choice);
             quesForm.appendChild(choiceLabel);
