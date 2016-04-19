@@ -219,7 +219,7 @@ function handleFormData(e){
         for (var j=0; j<divs[i].childNodes.length; j++){
             if (divs[i].childNodes[j].type == "radio") {
                 var quesAnsPair = {quesId: questCounter,
-                                    answerId: combos[comboId].questions[questCounter].choices.indexOf(divs[i].childNodes[j].value)};
+                                    answerId: combos[comboId].questions[i].choices.indexOf(divs[i].childNodes[j].value)};
                 answerArray.push(quesAnsPair);
                 console.log("questCounter:", questCounter);
                 questCounter += 1;
