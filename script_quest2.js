@@ -145,11 +145,11 @@ function askQuestions()
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
                 choice.style.display = "none";
-                choiceLabel.style.display = "block";
+                choiceLabel.style.display = "none";
                 
                 /*Hide all other questions other than the first.
                   Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-                question.style.display = "block";
+                question.style.display = "none";
                 
                 //for (var hr in document.getElementsByTagName("hr")) {
                 //    hr.style.display = "block";
