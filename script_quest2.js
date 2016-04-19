@@ -81,6 +81,33 @@ function getNextImage()
     $("#adImage").attr('src', combos[comboId].adURI).attr('class', combos[comboId].adpos);
 }
 
+function toggleQuestions()
+{
+    if (document.getElementById("choice00").checked) {
+        for (var elem in document.getElementById("quesForm").children) {
+            elem.style.display = "block";
+        }
+    } else {
+        for (var elem in document.getElementById("quesForm").children) {
+            if (elem.getAttribute("id").slice(6, 7) != "0"){ //WARNING: hard-coding!
+                elem.style.display = "none";
+            }
+        }
+    }
+    /*
+    if (document.getElementById("choice00").checked) {
+        //make visible all other questions and answers
+        for (i=1; i < combos[comboId].questions.length; i++) {
+            document.getElementById(combos[comboId].questions[i].id).style.display = "block";
+            for (j=0; j < combos[comboId].questions[i].choices.length; j++){
+                document.getElementById("choice"+i.toString()+j.toString()).style.display = "block";
+                for (var lbl in )
+            }
+        }
+    }
+    */
+}
+
 function askQuestions()
 {
     var question;
@@ -95,11 +122,11 @@ function askQuestions()
         quesForm.appendChild(question);
         quesForm.appendChild(document.createElement("p"));
     
-    //    if (i != 0) {
+        if (i != 0) {
             /*Hide all other questions other than the first.
               Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
-    //        question.style.display = "none";
-    //    }
+            question.style.display = "none";
+        }
     
         for (j=0; j < combos[comboId].questions[i].choices.length; j++){
             choice = document.createElement("input");
@@ -107,9 +134,9 @@ function askQuestions()
             choice.name = combos[comboId].questions[i].id;
             choice.setAttribute("value", combos[comboId].questions[i].choices[j]);
             choice.setAttribute("id", "choice"+i.toString()+j.toString());
-      //      if (i == 0) {
-      //          choice.onchange = toggleQuestions();
-        //    }
+            if (i == 0) { //attach an event handler to just the first question's answer options
+                choice.onchange = toggleQuestions();
+            }
             
             var choiceLabel = document.createElement("label");
             //var choiceText = document.createTextNode(combos[comboId].questions[i].choices[j]);
@@ -123,6 +150,7 @@ function askQuestions()
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
                 choice.style.display = "none";
+                choiceLabel.style.display = "none";
             }
             quesForm.appendChild(choice);
             quesForm.appendChild(choiceLabel);
