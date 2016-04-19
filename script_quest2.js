@@ -84,7 +84,7 @@ function getNextImage()
 function toggleQuestions()
 {
     console.log("toggleQuestions");
-    var elems = document.getElementById("quesForm").children;
+    var elems = document.getElementById("quesForm").childNodes;
     console.log(elems, elems.length);
     
     if (document.getElementById("choice00").checked) {
