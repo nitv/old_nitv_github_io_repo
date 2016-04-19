@@ -189,7 +189,7 @@ function handleFormData(e){
     var questCounter = 0;
     var numQuestions = combos[comboId].questions.length;
     var answerArray = [];
-    var divs = quesForm.children;
+    var divs = quesForm.childNodes;
     //answerArray.push({"comboId": comboId});
     if (e.preventDefault) e.preventDefault();
     
@@ -199,8 +199,26 @@ function handleFormData(e){
     
     if (divs[0].children[1].checked) {
         console.log("YAY!!!");
+        var quesAnsPair = {quesId: 0, 
+                           answerId: combos[comboId].questions[0].choices.indexOf(divs[0].childNodes[1].value)};
+        answerArray.push(quesAnsPair);
+        
+        for (var i=1; i<numQuestions; i++) {
+            quesAnsPair = {quesId: i, answerId: null};
+            answerArray.push(quesAnsPair);
+        }
+        
+        answerObj.answers = answerArray;
+        recordAnswers(answerObj);
+        formContainer.removeChild(quesForm);
+        handleNextButton();
+        return false;
+    } else {
+        
     }
-     
+    
+    
+    
     for (var elem in divs) {
         //divs[elem]
     }
