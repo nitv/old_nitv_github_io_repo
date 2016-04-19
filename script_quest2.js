@@ -84,17 +84,20 @@ function getNextImage()
 function toggleQuestions()
 {
     console.log("toggleQuestions");
+    var elems = document.getElementById("quesForm").children;
     if (document.getElementById("choice00").checked) {
-        for (var elem in document.getElementById("quesForm").children) {
+        for (var elem in elems) {
             console.log(elem);
-            document.getElementById("quesForm").children[elem].style.display = "block";
+            if (elems[elem].tagName != "radio"){
+                elems[elem].style.display = "block";
+            }
         }
     } else {
-        for (var elem in document.getElementById("quesForm").children) {
+        for (var elem in elems) {
             console.log(elem);
-            if (elem.getAttribute("id").slice(6, 7) != "0"){ //WARNING: hard-coding!
+            if (elems[elem].getAttribute("id").slice(6, 7) != "0"){ //WARNING: hard-coding!
                 console.log("here baby!");
-                document.getElementById("quesForm").children[elem].style.display = "none";
+                elems[elem].style.display = "none";
             }
         }
     }
