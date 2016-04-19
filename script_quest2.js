@@ -155,10 +155,10 @@ function askQuestions()
                 //    hr.style.display = "block";
                 //}
             //}
-            choiceLabel.appendChild(document.createElement("br"));
+            //choiceLabel.appendChild(document.createElement("br"));
             questDiv.appendChild(choice);
             questDiv.appendChild(choiceLabel);
-            //quesForm.appendChild(document.createElement("br"));
+            questDiv.appendChild(document.createElement("br"));
         }
         //question.appendChild(answers);
         if (i + 1 != combos[comboId].questions.length){
