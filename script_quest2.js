@@ -151,9 +151,9 @@ function askQuestions()
                   Once someone answers a 'yes' to the first question, the rest of the questions would appear*/
                 question.style.display = "block";
                 
-                for (var hr in document.getElementsByTagName("hr")) {
-                    hr.style.display = "block";
-                }
+                //for (var hr in document.getElementsByTagName("hr")) {
+                //    hr.style.display = "block";
+                //}
             }
             quesForm.appendChild(choice);
             quesForm.appendChild(choiceLabel);
