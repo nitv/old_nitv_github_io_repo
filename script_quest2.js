@@ -144,7 +144,7 @@ function askQuestions()
             if (i > 0) {
                 /*Hide all options for all questions other than the first question.
                   Once the first question gets a 'Yes', all these reappear*/
-                choice.style.display = "block";
+                choice.style.display = "none";
                 choiceLabel.style.display = "block";
                 
                 /*Hide all other questions other than the first.
