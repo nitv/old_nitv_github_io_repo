@@ -86,8 +86,8 @@ function toggleQuestions()
     console.log("toggleQuestions");
     if (document.getElementById("choice00").checked) {
         for (var elem in document.getElementById("quesForm").children) {
-            elem.style.display = "block";
             console.log(elem);
+            elem.style.display = "block";
         }
     } else {
         for (var elem in document.getElementById("quesForm").children) {
