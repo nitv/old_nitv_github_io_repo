@@ -8,7 +8,7 @@ var nextButton;
 var introContainer;
 var formContainer;
 var state = 0;
-var numStates = 3;
+var numStates = 2;
 var combos = [];
 var comboId;
 var comboIdArray = [];
