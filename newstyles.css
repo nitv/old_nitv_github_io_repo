@@ -28,9 +28,9 @@ body {
     position: absolute;
     left: 4%;
     right: 4%;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: block;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
 .adTop {
