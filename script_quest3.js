@@ -300,8 +300,10 @@ function handleNextButton()
         for (var i=0; i < mainContainer.childNodes.length; i++) {
             mainContainer.childNodes[i].remove();
         }
-        var thankYouMsg = document.createElement("h1");
-        thankYouMsg.textContent = "Thank You!";
-        mainContainer.appendChild(thankYouMsg);
+        if (screenNo == maxScreens) {
+            var thankYouMsg = document.createElement("h1");
+            thankYouMsg.textContent = "Thank You!";
+            mainContainer.appendChild(thankYouMsg);
+        }
     }
 }
