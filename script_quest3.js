@@ -257,7 +257,19 @@ function recordAnswers(answers)
     $.get("response.php", {data: JSON.stringify(answers)}, function (results){
         //alert(results)
     });
-    screenNo += 1;
+    if (screenNo < maxScreens) {
+        screenNo += 1;
+    } else {
+        //destroy everything and say thank you!
+        for (var i=0; i < mainContainer.childNodes.length; i++) {
+            mainContainer.childNodes[i].remove();
+        }
+        if (screenNo == maxScreens) {
+            var thankYouMsg = document.createElement("h1");
+            thankYouMsg.textContent = "Thank You!";
+            mainContainer.appendChild(thankYouMsg);
+        }
+    }
 }
 
 function init()
@@ -293,17 +305,5 @@ function handleNextButton()
     
     state = (state + 1) % numStates;
     
-    if (screenNo < maxScreens) {
-        screenNo += 1;
-    } else if (screenNo > maxScreens){
-        //destroy everything and say thank you!
-        for (var i=0; i < mainContainer.childNodes.length; i++) {
-            mainContainer.childNodes[i].remove();
-        }
-        if (screenNo == maxScreens) {
-            var thankYouMsg = document.createElement("h1");
-            thankYouMsg.textContent = "Thank You!";
-            mainContainer.appendChild(thankYouMsg);
-        }
-    }
+    
 }
