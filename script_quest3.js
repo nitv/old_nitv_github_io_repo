@@ -13,7 +13,7 @@ var combos = [];
 var comboId;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
-var maxScreens = 1;
+var maxScreens = 2;
 var screenNo = 1;
 
 $.ajax({
@@ -41,7 +41,7 @@ $.ajax({
         }
     
         console.log(combos);    
-        comboIdArray = create_unique_random_array(1, 0, 4);
+        comboIdArray = create_unique_random_array(2, 0, 4);
         console.log(comboIdArray);
     }
 })
@@ -264,11 +264,10 @@ function recordAnswers(answers)
         for (var i=0; i < mainContainer.childNodes.length; i++) {
             mainContainer.childNodes[i].remove();
         }
-        if (screenNo == maxScreens) {
-            var thankYouMsg = document.createElement("h1");
-            thankYouMsg.textContent = "Thank You!";
-            mainContainer.appendChild(thankYouMsg);
-        }
+        imgContainer.remove();
+        var thankYouMsg = document.createElement("h1");
+        thankYouMsg.textContent = "Thank You!";
+        mainContainer.appendChild(thankYouMsg);
     }
 }
 
@@ -295,6 +294,7 @@ function handleNextButton()
         adContainer.classList.add("adTop");
         //adContainer.style.display = "block";
         getImages();
+        controlContainer.style.display = "block";
     } else if (state == 1) { //state with quiz sets. i.e. has substates.
         imgContainer.style.display = "none";
         //nextButton.style.display = "none";
@@ -304,6 +304,4 @@ function handleNextButton()
     }
     
     state = (state + 1) % numStates;
-    
-    
 }
