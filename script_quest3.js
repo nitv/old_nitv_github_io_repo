@@ -295,7 +295,7 @@ function handleNextButton()
     
     if (screenNo < maxScreens) {
         screenNo += 1;
-    } else if (state == 0){
+    } else if (screenNo > maxScreens){
         //destroy everything and say thank you!
         for (var i=0; i < mainContainer.childNodes.length; i++) {
             mainContainer.childNodes[i].remove();
