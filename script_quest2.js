@@ -41,7 +41,7 @@ $.ajax({
         }
     
         console.log(combos);    
-        comboIdArray = create_unique_random_array(maxScreens, 0, maxScreens - 1);
+        comboIdArray = create_unique_random_array(1, 0, 4);
         console.log(comboIdArray);
     }
 })
@@ -304,17 +304,17 @@ function init()
 function handleNextButton()
 {
     if (state == 0) {
-        console.log("you clicked!");
-        introContainer.style.display = "none";
+        //console.log("you clicked!");
+        introContainer.remove();
         imgContainer.style.display = "block";
         adContainer.classList.add("adTop");
         //adContainer.style.display = "block";
         getNextImage();
         state = (state + 1) % numStates;
     } else if (state == 1) {
-        imgContainer.style.display = "none";
+        imgContainer.remove();
         //nextButton.style.display = "none";
-        controlContainer.style.display = "none";
+        controlContainer.remove();
         askQuestions();
         formContainer.style.display = "block";
         state = (state + 1) % numStates;
@@ -328,7 +328,7 @@ function handleNextButton()
         introContainer.remove();
         formContainer.remove();
         */
-        alert("Thank you for participating in our survey. Please click OK to close this window.");
-        window.close();
+        alert("Thank you for participating in our survey. Please click OK, and close this tab.");
+        //window.close();
     }
 }
