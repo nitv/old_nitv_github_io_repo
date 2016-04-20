@@ -13,8 +13,8 @@ var combos = [];
 var comboId;
 var comboIdArray = [];
 var currentComboIdIdx = 0;
-var maxScreens = 2;
-var screenNo = 0;
+var maxScreens = 1;
+var screenNo = 1;
 
 $.ajax({
     type: "GET",
@@ -73,7 +73,7 @@ function number_found (random_number, number_array) {
     return (random_number);
 }
 
-function getNextImage()
+function getImages()
 {
     comboId = comboIdArray[currentComboIdIdx];
     currentComboIdIdx = (currentComboIdIdx + 1) % 5;
@@ -234,37 +234,10 @@ function handleFormData(e){
         return true;
     } else {
         recordAnswers(answerObj);
-        formContainer.removeChild(quesForm);
+        formContainer.removeChild(quesForm); //remove the form
         handleNextButton();
         return false;
     }
-    
-    /*
-    for (i=0; i<quesForm.elements.length; i++){
-        if(quesForm.elements[i].checked == true){
-            console.log("Question: ", combos[comboId].questions[questCounter].ques);
-    //        quesAnsPair.quesId = questCounter;
-            console.log("your answer: ", quesForm.elements[i].value);
-    //        quesAnsPair.answerId = combos[comboId].questions[questCounter].choices.indexOf(quesForm.elements[i].value);
-            var quesAnsPair = {quesId: questCounter, answerId:      combos[comboId].questions[questCounter].choices.indexOf(quesForm.elements[i].value)};
-            console.log(quesAnsPair);
-            questCounter += 1;
-            answerArray.push(quesAnsPair);
-        }
-    }
-    answerObj.answers = answerArray;
-    console.log(answerObj); 
-    console.log("questCounter, numQuestions =", questCounter, numQuestions);
-    if (questCounter < numQuestions) {
-        alert("Please answer all questions");
-        return true;
-    } else {
-        recordAnswers(answerObj);
-        formContainer.removeChild(quesForm);
-        handleNextButton();
-        return false;
-    }
-    */
 }
 
 function validateForm()
@@ -303,32 +276,32 @@ function init()
 
 function handleNextButton()
 {
-    if (state == 0) {
+    if (state == 0) { //state with image displayed
         //console.log("you clicked!");
         introContainer.style.display = "none";
         imgContainer.style.display = "block";
         adContainer.classList.add("adTop");
         //adContainer.style.display = "block";
-        getNextImage();
-        state = (state + 1) % numStates;
-    } else if (state == 1) {
+        getImages();
+    } else if (state == 1) { //state with quiz sets. i.e. has substates.
         imgContainer.style.display = "none";
         //nextButton.style.display = "none";
         controlContainer.style.display = "none";
         askQuestions();
         formContainer.style.display = "block";
-        state = (state + 1) % numStates;
-    } else if (state == 2) {
-        mainContainer.remove();
-        /*
-        imgContainer.remove();
-        appImage.remove();
-        adContainer.remove();
-        adImage.remove();
-        introContainer.remove();
-        formContainer.remove();
-        */
-        alert("Thank you for participating in our survey. Please click OK, and close this tab.");
-        //window.close();
+    }
+    
+    state = (state + 1) % numStates;
+    
+    if (screenNo < maxScreens) {
+        screenNo += 1;
+    } else {
+        //destroy everything and say thank you!
+        for (var i=0; i < mainContainer.childNodes.length; i++) {
+            mainContainer.childNodes[i].remove();
+        }
+        var thankYouMsg = document.createElement("h1");
+        thankYouMsg.textContent = "Thank You!";
+        mainContainer.appendChild(thankYouMsg);
     }
 }
